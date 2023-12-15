@@ -20,6 +20,18 @@ Step-by-step instructions on how to install and set up the project
 ## Acknowledgments
 List and thank contributors, libraries, or resources that have been used or inspired the project
 
+PyTorch Library
+Hugging Face's [Transformers library](https://huggingface.co/transformers/)
+Thanks to OpenAI for the GPT-2 model
+This [discussion by harryenigma](https://discuss.huggingface.co/t/fine-tuning-gpt2-for-movie-script-generation-in-pytorch/23906/3) on Hugging Face was fundamental to the success of this project.
+
+
+[alan-23](https://huggingface.co/datasets/alan-23/HealthAssistant115/tree/main)
+[danielpark](https://huggingface.co/datasets/danielpark/MQuAD-v1/tree/main)
+[heliosbrahma](https://huggingface.co/datasets/heliosbrahma/mental_health_conversational_dataset/tree/main/data)
+[heliosbrahma](https://www.kaggle.com/datasets/elvis23/mental-health-conversational-data)
+
+
 ## Team members
 Caleb  - https://github.com/calebade
 Abisola  - https://github.com/Beesolah
