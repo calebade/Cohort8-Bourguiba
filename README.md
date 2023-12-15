@@ -6,10 +6,6 @@ better health practices in Africa. It will make healthcare information available
 accessible 24/7 for individuals to make informed decisions, improve healthcare 
 outcomes and contribute to public health improvement in the continent.
 
-## Table of Contents
-     - Medical question answering
-     - project description
-     - content
 
 ## Getting Started 
 Explain how to get a copy of the project up and running on a local machine for development and testing purposes
