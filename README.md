@@ -8,10 +8,9 @@ outcomes and contribute to public health improvement in the continent.
 
 
 ## Getting Started 
-Explain how to get a copy of the project up and running on a local machine for development and testing purposes
-
-## Installation
-Step-by-step instructions on how to install and set up the project
+- Clone repository to local machine
+- Open notebook in vscode or a similar code editor
+- Run cells and change path to match local file structure
 
 ## Acknowledgments
 - PyTorch Library
