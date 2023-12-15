@@ -26,10 +26,10 @@ List and thank contributors, libraries, or resources that have been used or insp
 - This [discussion by harryenigma](https://discuss.huggingface.co/t/fine-tuning-gpt2-for-movie-script-generation-in-pytorch/23906/3) on Hugging Face was fundamental to the success of this project.
 
 ## Data Sources
-Health Assistant dataset from [alan-23](https://huggingface.co/datasets/alan-23/HealthAssistant115/tree/main)
-Question and Answer dataset from [danielpark](https://huggingface.co/datasets/danielpark/MQuAD-v1/tree/main)
-Mental_Health_Conversational_dataset from [heliosbrahma](https://huggingface.co/datasets/heliosbrahma/mental_health_conversational_dataset/tree/main/data)
-Mental_Health_Conversational_dataset from [elvis23](https://www.kaggle.com/datasets/elvis23/mental-health-conversational-data)
+- Health Assistant dataset from [alan-23](https://huggingface.co/datasets/alan-23/HealthAssistant115/tree/main)
+- Question and Answer dataset from [danielpark](https://huggingface.co/datasets/danielpark/MQuAD-v1/tree/main)
+- Mental_Health_Conversational_dataset from [heliosbrahma](https://huggingface.co/datasets/heliosbrahma/mental_health_conversational_dataset/tree/main/data)
+- Mental_Health_Conversational_dataset from [elvis23](https://www.kaggle.com/datasets/elvis23/mental-health-conversational-data)
 
 
 ## Team members
