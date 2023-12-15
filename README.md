@@ -1,4 +1,4 @@
-# MEDICAL QUESTIONS ANSWERING CHATBOT
+# MEDICAL FREQUENTLY ASKED QUESTIONS BOT
 
 ## Project description 
 This project has the potential to bridge the information gap in healthcare and promote 
