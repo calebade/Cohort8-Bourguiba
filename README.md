@@ -18,8 +18,6 @@ Explain how to get a copy of the project up and running on a local machine for d
 Step-by-step instructions on how to install and set up the project
 
 ## Acknowledgments
-List and thank contributors, libraries, or resources that have been used or inspired the project
-
 - PyTorch Library
 - Hugging Face's [Transformers library](https://huggingface.co/transformers/)
 - Thanks to OpenAI for the GPT-2 model
@@ -31,21 +29,12 @@ List and thank contributors, libraries, or resources that have been used or insp
 - Mental_Health_Conversational_dataset from [heliosbrahma](https://huggingface.co/datasets/heliosbrahma/mental_health_conversational_dataset/tree/main/data)
 - Mental_Health_Conversational_dataset from [elvis23](https://www.kaggle.com/datasets/elvis23/mental-health-conversational-data)
 
-
 ## Team members
-Caleb  - https://github.com/calebade
-Abisola  - https://github.com/Beesolah
-Ayodeji - https://github.com/ayodeji07
-Joseph - https://github.com/JoeJoe75
-Bala - https://github.com/Balaaabduljalil
-
-## Requirements:
-Your project should involve the following components:
-- **Data sourcing and verification**
-- **Data cleaning and preparation**
-– **Model**
-- **Model deployment**
-- **End product verification**
+- Caleb  - https://github.com/calebade
+- Abisola  - https://github.com/Beesolah
+- Ayodeji - https://github.com/ayodeji07
+- Joseph - https://github.com/JoeJoe75
+- Bala - https://github.com/Balaaabduljalil
 
 ### Here is the timeline for your group projects:
 - Project Submission Deadline: December 10, 2023
