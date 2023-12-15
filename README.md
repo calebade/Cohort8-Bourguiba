@@ -22,8 +22,9 @@ Step-by-step instructions on how to install and set up the project
 ## Data Sources
 - Health Assistant dataset from [alan-23](https://huggingface.co/datasets/alan-23/HealthAssistant115/tree/main)
 - Question and Answer dataset from [danielpark](https://huggingface.co/datasets/danielpark/MQuAD-v1/tree/main)
-- Mental_Health_Conversational_dataset from [heliosbrahma](https://huggingface.co/datasets/heliosbrahma/mental_health_conversational_dataset/tree/main/data)
-- Mental_Health_Conversational_dataset from [elvis23](https://www.kaggle.com/datasets/elvis23/mental-health-conversational-data)
+- Mental Health Conversational dataset from [heliosbrahma](https://huggingface.co/datasets/heliosbrahma/mental_health_conversational_dataset/tree/main/data)
+- Mental Health Conversational dataset from [elvis23](https://www.kaggle.com/datasets/elvis23/mental-health-conversational-data)
+- Medical Question Answering dataset[jpmiller](https://www.kaggle.com/datasets/jpmiller/layoutlm)
 
 ## Team members
 - Caleb  - https://github.com/calebade
