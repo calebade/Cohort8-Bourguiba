@@ -17,6 +17,8 @@ outcomes and contribute to public health improvement in the continent.
 - Hugging Face's [Transformers library](https://huggingface.co/transformers/)
 - Thanks to OpenAI for the GPT-2 model
 - This [discussion by harryenigma](https://discuss.huggingface.co/t/fine-tuning-gpt2-for-movie-script-generation-in-pytorch/23906/3) on Hugging Face was fundamental to the success of this project.
+- Our Mentor Fortune Adekogbe did a great job in putting us through.
+- And we appreciate our instructors and tutors At AISaturday for the knowledge instill in us to help deliver this project.
 
 ## Data Sources
 - Health Assistant dataset from [alan-23](https://huggingface.co/datasets/alan-23/HealthAssistant115/tree/main)
