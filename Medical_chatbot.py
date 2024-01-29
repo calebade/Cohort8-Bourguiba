@@ -53,7 +53,7 @@ medical_tips = [
 ]
 
 # Streamlit app
-st.title("MedPal Chatbot")
+st.title("MediPal Chatbot")
 user_input = st.text_input("Ask a medical question:")
 if st.button("Get Answer"):
     if user_input:
