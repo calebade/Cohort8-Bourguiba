@@ -1,6 +1,7 @@
 import streamlit as st
 import time
-import torch
+from torch import tensor
+from torch.cuda import is_available
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 # Load the GPT-2 model and tokenizer
