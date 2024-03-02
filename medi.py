@@ -19,31 +19,39 @@ def generate_response(question):
 
 # Medical tips
 medical_tips = [
-    "Tip 1: Stay hydrated. Drink plenty of water throughout the day.",
-    "Tip 2: Get regular exercise to maintain a healthy lifestyle.",
-    "Tip 3: Ensure a balanced diet with a variety of fruits and vegetables.",
-    "Tip 4: Prioritize good sleep. Aim for 7-9 hours per night.",
-    "Tip 5: Wash your hands regularly to prevent the spread of germs.",
+    "Stay hydrated. Drink plenty of water throughout the day.",
+    "Get regular exercise to maintain a healthy lifestyle.",
+    "Ensure a balanced diet with a variety of fruits and vegetables.",
+    "Prioritize good sleep. Aim for 7-9 hours per night.",
+    "Wash your hands regularly to prevent the spread of germs.",
 ]
 
 # Streamlit app
-st.title("MediPal Chatbot")
-user_input = st.text_input("Ask a medical question:")
-if st.button("Get Answer"):
-    if user_input:
-        response = generate_response(user_input)
-        st.subheader("Chatbot Response:")
-        st.write(response)
-    else:
-        st.warning("Please enter a medical question.")
+st.title("MediPal")
 
-# Random medical tips section
-st.sidebar.title("Random Medical Tips")
+# Sidebar navigation
+selected_option = st.sidebar.radio("Navigation", ["Chatbot", "Info"])
 
-# Display a new tip every 30 seconds
-tip_index = 0
-while True:
-    st.sidebar.subheader("Medical Tip of the Day:")
-    st.sidebar.write(medical_tips[tip_index])
-    time.sleep(30)  # Wait for 30 seconds before changing the tip
-    tip_index = (tip_index + 1) % len(medical_tips)
+# Display selected option
+if selected_option == "Chatbot":
+    st.subheader("Chatbot")
+    user_input = st.text_input("Ask a medical question:")
+    if st.button("Get Answer"):
+        if user_input:
+            response = generate_response(user_input)
+            st.subheader("Chatbot Response:")
+            st.write(response)
+        else:
+            st.warning("Please enter a medical question.")
+
+    # Medical tips changing every 15 seconds
+    st.subheader("Medical Tips")
+    tip_index = 0
+    while True:
+        st.write(medical_tips[tip_index])
+        time.sleep(15)
+        tip_index = (tip_index + 1) % len(medical_tips)
+
+else:  # Info section
+    st.subheader("Info")
+    st.write("This is the info section.")
