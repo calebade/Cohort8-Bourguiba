@@ -1,21 +1,6 @@
 import streamlit as st
 import time
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
-
-# Load the GPT-2 model and tokenizer
-model = GPT2LMHeadModel.from_pretrained("gpt2")
-tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
-
-def generate_response(question):
-    # Tokenize the input question
-    input_ids = tokenizer.encode(question, return_tensors="pt")
-
-    # Generate response using the GPT-2 model
-    output = model.generate(input_ids, max_length=150, num_return_sequences=1, temperature=0.7)
-
-    # Decode the generated response
-    response = tokenizer.decode(output[0], skip_special_tokens=True)
-    return response
+import random
 
 # Medical tips
 medical_tips = [
@@ -46,7 +31,18 @@ st.title("MediPal Chatbot")
 user_input = st.text_input("Ask a medical question:")
 if st.button("Get Answer"):
     if user_input:
-        response = generate_response(user_input)
+        # Check for common keywords in the user input and provide a relevant response
+        if "headache" in user_input.lower():
+            response = "You could try taking some over-the-counter pain relievers like ibuprofen or acetaminophen. If the headache persists or worsens, it's best to consult with a healthcare professional."
+        elif "fever" in user_input.lower():
+            response = "Make sure to rest and stay hydrated. You can also take some fever-reducing medication like acetaminophen. If the fever persists or is accompanied by other symptoms, seek medical attention."
+        elif "cough" in user_input.lower():
+            response = "Try staying hydrated and using cough drops or cough syrup to soothe your throat. If the cough persists for more than a few days or is severe, consult with a doctor."
+        elif "sore throat" in user_input.lower():
+            response = "Gargling with warm salt water and staying hydrated can help alleviate a sore throat. If the sore throat persists or is accompanied by other symptoms, consult with a healthcare professional."
+        else:
+            response = "I'm sorry, I don't have information on that topic. It's best to consult with a healthcare professional for personalized advice."
+        
         st.subheader("Chatbot Response:")
         st.write(response)
     else:
@@ -61,4 +57,4 @@ while True:
     st.sidebar.subheader("Medical Tip of the Day:")
     st.sidebar.write(medical_tips[tip_index])
     time.sleep(30)  # Wait for 30 seconds before changing the tip
-    tip_index = (tip_index + 1) % len(medical_tips)
+    tip_index = (tip_index + 1) % len(medical_tips)￼Enter
