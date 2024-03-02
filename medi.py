@@ -46,12 +46,28 @@ if selected_option == "Chatbot":
 
     # Medical tips changing every 15 seconds
     st.subheader("Medical Tips")
+    tip_text = st.empty()  # Placeholder for displaying the tip
     tip_index = 0
     while True:
-        st.write(medical_tips[tip_index])
+        tip_text.text(medical_tips[tip_index])
         time.sleep(15)
         tip_index = (tip_index + 1) % len(medical_tips)
 
 else:  # Info section
-    st.subheader("Info")
-    st.write("This is the info section.")
+    st.subheader("About MediPal")
+    st.write("""
+        MediPal is an interactive chatbot designed to provide medical advice and tips for maintaining a healthy lifestyle.
+        Whether you have questions about common health issues or need guidance on improving your well-being, MediPal is here to help!
+        
+        **Features:**
+        - Ask medical questions and receive informative responses.
+        - Get useful tips for staying healthy and preventing illnesses.
+        - Easy-to-use interface for a seamless user experience.
+        
+        **Disclaimer:**
+        MediPal is for informational purposes only and should not be used as a substitute for professional medical advice.
+        Always consult with a healthcare provider for accurate diagnosis and treatment options.
+        
+        **Contact Us:**
+        If you have any questions or feedback, please email us at contact@medipal.com.
+    """)
