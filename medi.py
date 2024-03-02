@@ -61,4 +61,4 @@ while True:
     st.sidebar.subheader("Medical Tip of the Day:")
     st.sidebar.write(medical_tips[tip_index])
     time.sleep(30)  # Wait for 30 seconds before changing the tip
-    tip_index = (tip_index + 1) % len(medical_tips)￼Enter
+    tip_index = (tip_index + 1) % len(medical_tips)
