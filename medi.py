@@ -1,34 +1,20 @@
 import streamlit as st
 import time
-from langchain.chat_models import ChatOpenAI
-from langchain.chains import ConversationChain
-from langchain.chains.conversation.memory import ConversationBufferWindowMemory
-from langchain.prompts import (
-    SystemMessagePromptTemplate,
-    HumanMessagePromptTemplate,
-    ChatPromptTemplate,
-    MessagesPlaceholder
-)
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-# Initialize the Langchain chat model
-chat_model = ChatOpenAI(engine="davinci")
-
-# Define conversation memory
-conversation_memory = ConversationBufferWindowMemory(max_length=3)
-
-# Initialize the conversation chain
-conversation_chain = ConversationChain(
-    chat_model=chat_model,
-    memory=conversation_memory,
-    human_message_template=HumanMessagePromptTemplate(),
-    system_message_template=SystemMessagePromptTemplate(),
-    chat_prompt_template=ChatPromptTemplate(),
-    messages_placeholder=MessagesPlaceholder(),
-)
+# Load the GPT-2 model and tokenizer
+model = GPT2LMHeadModel.from_pretrained("gpt2")
+tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
 
 def generate_response(question):
-    # Get response from the conversation chain
-    response = conversation_chain.respond_to_message(question)
+    # Tokenize the input question
+    input_ids = tokenizer.encode(question, return_tensors="pt")
+
+    # Generate response using the GPT-2 model
+    output = model.generate(input_ids, max_length=150, num_return_sequences=1, temperature=0.7)
+
+    # Decode the generated response
+    response = tokenizer.decode(output[0], skip_special_tokens=True)
     return response
 
 # Medical tips
@@ -38,11 +24,6 @@ medical_tips = [
     "Tip 3: Ensure a balanced diet with a variety of fruits and vegetables.",
     "Tip 4: Prioritize good sleep. Aim for 7-9 hours per night.",
     "Tip 5: Wash your hands regularly to prevent the spread of germs.",
-    "Tip 6: Manage stress through activities like meditation or deep breathing.",
-    "Tip 7: Avoid smoking and limit alcohol consumption.",
-    "Tip 8: Wear sunscreen to protect your skin from harmful UV rays.",
-    "Tip 9: Practice proper posture to prevent back and neck pain.",
-    "Tip 10: Laughing is good for your health. Find time for humor."
 ]
 
 # Streamlit app
