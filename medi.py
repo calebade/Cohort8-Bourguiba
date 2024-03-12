@@ -1,20 +1,30 @@
 import streamlit as st
 import time
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
+from google_generativeai import PromptTemplate
 
-# Load the GPT-2 model and tokenizer
-model = GPT2LMHeadModel.from_pretrained("gpt2")
-tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
+# Retrieve Gemini API key from Streamlit Secrets 
+gemini_api_key = st.secrets["gemini_api_key"] 
+
+# Define a PromptTemplate for Gemini
+prompt_template = PromptTemplate(
+    model_name="540B",
+    max_tokens=150,
+    temperature=0.4,
+    n=1,
+    stop=None,
+    top_p=1.0,
+    frequency_penalty=0.0,
+    presence_penalty=0.0,
+    repetition_penalty=1.0,
+)
 
 def generate_response(question):
-    # Tokenize the input question
-    input_ids = tokenizer.encode(question, return_tensors="pt")
+    # Construct the prompt for Gemini
+    prompt = prompt_template.format({"question": question})
 
-    # Generate response using the GPT-2 model
-    output = model.generate(input_ids, max_length=150, num_return_sequences=1, temperature=0.7)
+    # Call Gemini using the prompt and API key
+    response = prompt_template.generate(prompt, api_key=gemini_api_key)
 
-    # Decode the generated response
-    response = tokenizer.decode(output[0], skip_special_tokens=True)
     return response
 
 # Medical tips
@@ -30,7 +40,17 @@ medical_tips = [
 st.title("MediPal")
 
 # Sidebar navigation
-selected_option = st.sidebar.radio("Navigation", ["Chatbot", "Info"])
+st.sidebar.title("Menu")
+
+# Define menu items with icons
+menu_items = {
+    "Chatbot": "🤖",
+    "Info": "ℹ️",
+}
+
+# Allow user to select a section
+selected_option = st.sidebar.radio("Navigation", list(menu_items.keys()), format_func=lambda x: f"{menu_items[x]} {x}")
+
 
 # Display selected option
 if selected_option == "Chatbot":
@@ -69,5 +89,5 @@ else:  # Info section
         Always consult with a healthcare provider for accurate diagnosis and treatment options.
         
         **Contact Us:**
-        If you have any questions or feedback, please email us at contact@medipal.com.
+        If you have any questions or feedback, please email us at @gmail.com.
     """)
