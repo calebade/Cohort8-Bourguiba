@@ -1,6 +1,6 @@
 import streamlit as st
 import time
-from google_generativeai import PromptTemplate
+from google.generativeai import PromptTemplate
 
 # Retrieve Gemini API key from Streamlit Secrets 
 gemini_api_key = st.secrets["gemini_api_key"] 
