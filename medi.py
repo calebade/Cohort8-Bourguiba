@@ -5,8 +5,10 @@ from google.generativeai import GenerativeModel
 # Retrieve Gemini API key from Streamlit Secrets 
 gemini_api_key = st.secrets["gemini_api_key"] 
 
+GenerativeModel.configure(api_key = gemini_api_key)
+
 # Initialize the GenerativeModel with the Gemini API key
-model = GenerativeModel('gemini-pro', api_key=gemini_api_key)
+model = GenerativeModel.GenerativeModel('gemini-pro')
 
 def generate_response(question):
     # Generate response using the Gemini model
