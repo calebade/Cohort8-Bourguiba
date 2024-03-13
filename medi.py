@@ -1,30 +1,16 @@
 import streamlit as st
 import time
-from google.generativeai import PromptTemplate
+from google.generativeai import GenerativeModel
 
 # Retrieve Gemini API key from Streamlit Secrets 
 gemini_api_key = st.secrets["gemini_api_key"] 
 
-# Define a PromptTemplate for Gemini
-prompt_template = PromptTemplate(
-    model_name="540B",
-    max_tokens=150,
-    temperature=0.4,
-    n=1,
-    stop=None,
-    top_p=1.0,
-    frequency_penalty=0.0,
-    presence_penalty=0.0,
-    repetition_penalty=1.0,
-)
+# Initialize the GenerativeModel with the Gemini API key
+model = GenerativeModel('gemini-pro', api_key=gemini_api_key)
 
 def generate_response(question):
-    # Construct the prompt for Gemini
-    prompt = prompt_template.format({"question": question})
-
-    # Call Gemini using the prompt and API key
-    response = prompt_template.generate(prompt, api_key=gemini_api_key)
-
+    # Generate response using the Gemini model
+    response = model.predict(question)
     return response
 
 # Medical tips
